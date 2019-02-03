@@ -23,7 +23,7 @@
     <parent>
         <groupId>ch.infocentric.aem</groupId>
         <artifactId>ax-extensions</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -93,13 +93,6 @@
                     <verbose>true</verbose>
                     <failOnError>true</failOnError>
                     <group>ax-extensions</group>
-                    <embeddeds>
-                        <embedded>
-                            <groupId>ch.infocentric.aem</groupId>
-                            <artifactId>ax-extensions.core</artifactId>
-                            <target>/apps/ax-extensions/install</target>
-                        </embedded>
-                    </embeddeds>
                 </configuration>
             </plugin>
 
@@ -114,11 +107,6 @@
     <!-- D E P E N D E N C I E S                                                -->
     <!-- ====================================================================== -->
     <dependencies>
-        <dependency>
-            <groupId>ch.infocentric.aem</groupId>
-            <artifactId>ax-extensions.core</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
 
         <dependency>
             <groupId>com.adobe.aem</groupId>

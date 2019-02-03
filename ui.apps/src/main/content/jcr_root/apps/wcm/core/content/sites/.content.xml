@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          jcr:primaryType="nt:unstructured">
+    <jcr:content jcr:primaryType="nt:unstructured">
+        <actions jcr:primaryType="nt:unstructured">
+            <selection jcr:primaryType="nt:unstructured">
+                <viewAsPublished
+                        granite:rel="cq-siteadmin-admin-actions-edit-activator"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/collection/action"
+                        action="cq.wcm.open"
+                        target=".cq-siteadmin-admin-childpages"
+                        text="View as Published"
+                        icon="preview"
+                        activeSelectionCount="multiple"
+                        variant="actionBar"
+                        sling:orderBefore="[lockpage]">
+                    <data
+                            jcr:primaryType="nt:unstructured"
+                            href.uritemplate="\{+item\}.html?wcmmode=disabled"/>
+                </viewAsPublished>
+            </selection>
+        </actions>
+        <rails/>
+    </jcr:content>
+</jcr:root>
