@@ -1,10 +1,9 @@
-# Created by https://www.gitignore.io/api/eclipse,java,maven
+ Created by https://www.gitignore.io/api/eclipse,java,maven
 
 ### Eclipse ###
 *.pydevproject
 .metadata
 .gradle
-bin/
 tmp/
 *.tmp
 *.bak
