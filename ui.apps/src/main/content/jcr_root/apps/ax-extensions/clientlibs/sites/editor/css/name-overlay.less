@@ -1,0 +1,13 @@
+div.cq-Overlay.cq-draggable.cq-droptarget, div.cq-Overlay:not(.cq-Overlay--container) {
+
+  .cq-Overlay--component-name {
+    display: inline;
+    bottom: initial;
+    top: 0;
+    height: 18px;
+  }
+}
+
+div[title="Paragraph System"] > .cq-Overlay--component-name, div[title~="[Root]"] > .cq-Overlay--component-name {
+  display: none !important;
+}
