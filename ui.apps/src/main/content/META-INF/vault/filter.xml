@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/apps/ax-extensions/clientlibs"/>
+    <filter root="/apps/aem-axx/clientlibs"/>
     <filter root="/apps/cq" />
+    <filter root="/apps/dam" />
     <filter root="/apps/wcm" />
 </workspaceFilter>

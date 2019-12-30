@@ -21,19 +21,19 @@
     <!-- P A R E N T  P R O J E C T  D E S C R I P T I O N                      -->
     <!-- ====================================================================== -->
     <parent>
-        <groupId>ch.infocentric.aem</groupId>
-        <artifactId>ax-extensions</artifactId>
-        <version>1.0</version>
+        <groupId>ch.aem-devs</groupId>
+        <artifactId>aem-axx</artifactId>
+        <version>1.1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <!-- ====================================================================== -->
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
-    <artifactId>ax-extensions.ui.apps</artifactId>
+    <artifactId>aem-axx-pkg</artifactId>
     <packaging>content-package</packaging>
-    <name>ax-extensions - UI apps</name>
-    <description>UI apps package for ax-extensions</description>
+    <name>AEM - Author Experience Extensions</name>
+    <description>AEM - Author Experience Extensions is intended to simplify the daily life of authors using Adobe Experience Manager. The aim of this project is to get some simple features back to Touch UI without having to involve any AEM developer.</description>
 
     <!-- <scm>
         <connection></connection>
@@ -64,6 +64,10 @@
                     <exclude>**/target/**</exclude>
                     <exclude>**/pom.xml</exclude>
                 </excludes>
+            </resource>
+            <resource>
+                <directory>${basedir}/src/main/content/META-INF/vault/definition</directory>
+                <targetPath>../vault-work/META-INF/vault/definition</targetPath>
             </resource>
         </resources>
         <plugins>
