@@ -35,4 +35,4 @@ The following files have been overlayed:
 
 ## How to install
 
-Just download the [CRX-Package](/nhirrle/aem-axx/releases/latest/download) and install it on your local AEM instance or embed it when installing it for aem cloud.
+Just download the [CRX-Package](https://github.com/nhirrle/aem-axx/releases/latest) and install it on your local AEM instance or embed it when installing it for aem cloud.
