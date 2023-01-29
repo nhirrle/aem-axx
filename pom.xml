@@ -41,6 +41,15 @@
         <aem.sdk.api>2021.9.5852.20210917T073206Z-210800</aem.sdk.api>
     </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/nhirrle/aem-axx</url>
+        </repository>
+    </distributionManagement>
+
+
     <build>
         <plugins>
             <!-- Maven Release Plugin -->
