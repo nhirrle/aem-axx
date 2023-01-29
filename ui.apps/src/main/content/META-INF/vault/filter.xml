@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/apps/aem-axx/clientlibs"/>
-    <filter root="/apps/cq" />
-    <filter root="/apps/dam" />
-    <filter root="/apps/wcm" />
+    <filter root="/apps/aem-axx"/>
+    <filter root="/apps/cq" mode="merge" />
+    <filter root="/apps/cq/gui/components/coral/admin/page/columnitem/columnitem.jsp" />
+    <filter root="/apps/dam" mode="merge"/>
+    <filter root="/apps/dam/gui/coral/components/admin/contentrenderer/column" />
+    <filter root="/apps/wcm" mode="merge"/>
+    <filter root="/apps/wcm/core/content/sites" />
 </workspaceFilter>

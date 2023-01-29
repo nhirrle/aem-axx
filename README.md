@@ -1,8 +1,6 @@
 # AEM - Author Experience Extensions (aem-axx)
 
-AEM - Author Experience Extensions is intended to simplify the daily life of authors using Adobe Experience Manager. 
-The aim of this project is to get some simple features back to Touch UI without having to involve any AEM developer. 
-Just install it and be happy.  
+AEM - Author Experience Extensions is intended to simplify the daily life of authors using Adobe Experience Manager.
 
 ![Screenshot of AEM AXX Sites](bin/aem-axx-sites.jpg?raw=true)
 
@@ -17,7 +15,12 @@ Just install it and be happy.
 
 ## Technical Hints
 
-The CRX-Package overlays very few AEM files. It has been tested with an out of the box instance of AEM 6.5.3, AEM 6.4.6, AEM 6.4.3 and AEM 6.4.2 in Firefox, Chrome, IE 11 and Edge. Still no software is 100% bugfree, so in case of any issue, the CRX-Package can just be uninstalled and everything works as before.
+The CRX-Package overlays very few AEM files. 
+It has been tested with an **AEM Cloud instance** (v2023.1.10675.20230113T110236Z-220900) in latest Firefox, Chrome and Edge.
+
+AEM 6.5 is NOT supported (anymore).
+
+In case of any issue, the CRX-Package can just be uninstalled and everything works as before.
 
 The following files have been overlayed:
 
@@ -28,4 +31,4 @@ The following files have been overlayed:
 
 ## How to install
 
-Just download the [CRX-Package](bin/aem-axx-pkg-1.1.zip) and install it on your AEM instance.
+Just download the [CRX-Package](/nhirrle/aem-axx/releases/latest/download) and install it on your local AEM instance or embed it when installing it for aem cloud.

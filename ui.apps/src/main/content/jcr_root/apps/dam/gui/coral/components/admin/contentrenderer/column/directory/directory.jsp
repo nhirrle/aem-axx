@@ -17,7 +17,6 @@
 <%
 %><%
 %><%@page import="org.apache.sling.api.resource.Resource,
-                  org.apache.jackrabbit.commons.JcrUtils,
 				  java.util.Iterator"%><%
 %><%@taglib prefix="cq" uri="http://www.day.com/taglibs/cq/1.0"%><%
 %><%@include file="/libs/dam/gui/coral/components/admin/contentrenderer/base/init/directoryBase.jsp"%><%
@@ -41,7 +40,7 @@
 %><coral-columnview-item <%= attrs %>>
     <cq:include script = "meta.jsp"/>
     <coral-columnview-item-thumbnail>
-        <coral-icon icon="folder"></coral-icon>
+        <coral-icon icon="folder" alt=""></coral-icon>
     </coral-columnview-item-thumbnail>
     <coral-columnview-item-content>
         <%-- AXX: Begin of custom code --%>
@@ -51,7 +50,7 @@
                 com.day.cq.replication.ReplicationStatus replicationStatus = resource.adaptTo(com.day.cq.replication.ReplicationStatus.class);
                 if (replicationStatus.isActivated()) {
                     statusAsString = "published";
-                    if (replicationStatus.getLastPublished().before(JcrUtils.getLastModified(resource.adaptTo(Node.class)))) {
+                    if (replicationStatus.getLastPublished().before(org.apache.jackrabbit.commons.JcrUtils.getLastModified(resource.adaptTo(Node.class)))) {
                         statusAsString = "modified";
                     }
                 }
@@ -60,7 +59,7 @@
                 }
             }
         %>
-        <a class="axx-ribbon <%= !statusAsString.isEmpty() ? "axx-ribbon--" + statusAsString : "" %>" title="<%= statusAsString.isEmpty() ? "Never published" : StringUtils.capitalize(statusAsString)%>"></a>
+        <a class="axx-ribbon <%= !statusAsString.isEmpty() ? "axx-ribbon--" + statusAsString : "" %>" title="<%= statusAsString.isEmpty() ? "Never published" : org.apache.commons.lang3.StringUtils.capitalize(statusAsString)%>"></a>
         <%-- AXX: End of custom code --%>
         <div class="foundation-collection-item-title" itemprop="title" title="<%= xssAPI.encodeForHTMLAttr(resourceTitle) %>">
             <%= xssAPI.encodeForHTML(resourceTitle) %>
