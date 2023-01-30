@@ -45,7 +45,7 @@ With AEM Cloud you cannot install this package with CRX Package Manager as /apps
 
 Instead, you will need to embed the package to your source-code:
 
-1. Add a local file system repository to your all/pom.xml add 
+1. Configure a local file system repository to your all/pom.xml  
 ```
     <repositories>
         <repository>
@@ -70,7 +70,7 @@ Instead, you will need to embed the package to your source-code:
     </dependency>
 ```
 
-3. Add the dependency to the embed block within the filevault-package-maven-plugin configuration 
+3. Define the dependency to the embed block within the filevault-package-maven-plugin configuration 
 ```
     <plugin>
         <groupId>org.apache.jackrabbit</groupId>
@@ -97,4 +97,5 @@ Instead, you will need to embed the package to your source-code:
 mvn org.apache.maven.plugins:maven-install-plugin:3.1.0:install-file -Dfile={aem-axx-pkg.path} -DlocalRepositoryPath=./all/repository/ -Dpackaging=zip -DgeneratePo
 m=true
 ```
+6. Confirm that package installation succeeds by running `mvn clean install -PautoSinglePackage` on your local AEM instance.
 6. Commit and push the changes to your adobe git, afterwards run a deployment with Cloud Manager.
