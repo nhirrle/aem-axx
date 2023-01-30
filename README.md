@@ -35,7 +35,6 @@ The following files have been overlayed:
 
 ## How to install
 
-
 ### Cloud SDK Installation
 
 For testing purposes locally you can just download the [CRX-Package](/nhirrle/aem-axx/releases/latest/download) and install it on your local AEM instance
