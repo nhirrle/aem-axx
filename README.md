@@ -91,7 +91,7 @@ Instead, you will need to embed the package to your source-code:
             </embeddeds>
             ...
 ```
-4. Download latest [CRX-Package](/nhirrle/aem-axx/releases/latest/download) from Github.
+4. Download latest [CRX-Package](https://github.com/nhirrle/aem-axx/releases/latest) from Github.
 5. Run following command from the AEM project source root to add the package to the local git repo. Replace {aem-axx-pkg.path} with the path to the file you downloaded in step 4.:
 ```
 mvn org.apache.maven.plugins:maven-install-plugin:3.1.0:install-file -Dfile={aem-axx-pkg.path} -DlocalRepositoryPath=./all/repository/ -Dpackaging=zip -DgeneratePo
