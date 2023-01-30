@@ -35,4 +35,66 @@ The following files have been overlayed:
 
 ## How to install
 
-Just download the [CRX-Package](https://github.com/nhirrle/aem-axx/releases/latest) and install it on your local AEM instance or embed it when installing it for aem cloud.
+### Cloud SDK Installation
+
+For testing purposes locally you can just download the [CRX-Package](/nhirrle/aem-axx/releases/latest/download) and install it on your local AEM instance
+
+### AEM Cloud installation
+
+With AEM Cloud you cannot install this package with CRX Package Manager as /apps in immutable. 
+
+Instead, you will need to embed the package to your source-code:
+
+1. Add a local file system repository to your all/pom.xml add 
+```
+    <repositories>
+        <repository>
+            <id>project.local</id>
+            <name>project</name>
+            <url>file:${project.basedir}/repository</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </repository>
+    </repositories>
+```
+
+2. Add dependency to the all/pom.xml
+```
+    <dependency>
+        <groupId>ch.aem-devs</groupId>
+        <artifactId>aem-axx-pkg</artifactId>
+        <version>1.2</version>
+        <type>zip</type>
+    </dependency>
+```
+
+3. Add the dependency to the embed block within the filevault-package-maven-plugin configuration 
+```
+    <plugin>
+        <groupId>org.apache.jackrabbit</groupId>
+        <artifactId>filevault-package-maven-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+            <group>my-package</group>
+            <packageType>container</packageType>
+            <skipSubPackageValidation>true</skipSubPackageValidation>
+            <embeddeds>
+                <embedded>
+                    <groupId>ch.aem-devs</groupId>
+                    <artifactId>aem-axx-pkg</artifactId>
+                    <type>zip</type>
+                    <target>/apps/aem-axx-packages/application/install</target>
+                </embedded>
+                ....
+            </embeddeds>
+            ...
+```
+4. Download latest [CRX-Package](/nhirrle/aem-axx/releases/latest/download) from Github.
+5. Run following command from the AEM project source root to add the package to the local git repo. Replace {aem-axx-pkg.path} with the path to the file you downloaded in step 4.:
+```
+mvn org.apache.maven.plugins:maven-install-plugin:3.1.0:install-file -Dfile={aem-axx-pkg.path} -DlocalRepositoryPath=./all/repository/ -Dpackaging=zip -DgeneratePo
+m=true
+```
+6. Commit and push the changes to your adobe git, afterwards run a deployment with Cloud Manager.
